@@ -1,0 +1,48 @@
+.settings-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  .settings-paper {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .MuiTypography-h5 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .MuiFormControlLabel-root {
+      margin: 0;
+      padding: 12px;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+
+        [data-theme='dark'] & {
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+      }
+
+      .MuiSwitch-root {
+        margin-right: 16px;
+      }
+
+      .MuiTypography-root {
+        font-weight: 500;
+      }
+    }
+
+    .MuiAlert-root {
+      margin-bottom: 16px;
+    }
+  }
+} 

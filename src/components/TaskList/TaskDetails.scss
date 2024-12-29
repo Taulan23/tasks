@@ -1,0 +1,36 @@
+.dialog-title {
+  .title-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.task-form {
+  .form-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .subtasks-section,
+  .tags-section {
+    margin-top: 24px;
+
+    .add-subtask,
+    .add-tag {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .tag-chip {
+        background-color: rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+} 

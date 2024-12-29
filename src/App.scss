@@ -1,0 +1,568 @@
+// Определяем CSS-переменные для обеих тем
+:root {
+  // Светлая тема (по умолчанию)
+  --background-primary: #ffffff;
+  --background-secondary: #f5f7fa;
+  --background-paper: #ffffff;
+  --background-dialog: #ffffff;
+  --background-input: #ffffff;
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --border-color: rgba(0, 0, 0, 0.12);
+
+  // При включении темной темы
+  &[data-theme='dark'] {
+    --background-primary: #121212;
+    --background-secondary: #1e1e1e;
+    --background-paper: #1e1e1e;
+    --background-dialog: #1e1e1e;
+    --background-input: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+// Применяем темную тему ко всему документу
+html[data-theme='dark'] {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+
+  // Стили для всего body
+  body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+  }
+}
+
+body {
+  margin: 0;
+  transition: all 0.3s ease;
+
+  &[data-theme='dark'] {
+    background: #121212;
+  }
+
+  &[data-theme='light'] {
+    background: #f5f7fa;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+
+  // Общие стили для всех компонентов
+  .MuiPaper-root,
+  .MuiDialog-paper,
+  .MuiCard-root,
+  .MuiMenu-paper {
+    background-color: var(--background-paper) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .MuiTextField-root,
+  .MuiOutlinedInput-root,
+  .MuiSelect-root {
+    background-color: var(--background-input) !important;
+    color: var(--text-primary) !important;
+
+    input, textarea {
+      color: var(--text-primary) !important;
+    }
+  }
+
+  &[data-theme='dark'] {
+    background: #121212;
+    color: #ffffff;
+
+    // Общие стили для всех страниц в темной теме
+    .MuiPaper-root {
+      background: #1e1e1e !important;
+      color: #ffffff;
+    }
+
+    // Стили для всех диалоговых окон
+    .MuiDialog-paper {
+      background: #1e1e1e !important;
+      color: #ffffff;
+    }
+
+    // Стили для всех полей ввода
+    .MuiTextField-root {
+      .MuiOutlinedInput-root {
+        background: #2d2d2d;
+        color: #ffffff;
+
+        input {
+          color: #ffffff;
+        }
+
+        fieldset {
+          border-color: rgba(255, 255, 255, 0.23);
+        }
+      }
+
+      .MuiInputLabel-root {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    // Стили для всех списков
+    .MuiList-root {
+      background: #1e1e1e;
+      
+      .MuiListItem-root {
+        color: #ffffff;
+        
+        &:hover {
+          background: #2d2d2d;
+        }
+      }
+    }
+
+    // Стили для всех меню
+    .MuiMenu-paper {
+      background: #1e1e1e !important;
+      color: #ffffff;
+    }
+
+    // Стили для всех кнопок
+    .MuiButton-root {
+      &.MuiButton-contained {
+        background: #3f51b5;
+        color: #ffffff;
+        
+        &:hover {
+          background: #303f9f;
+        }
+      }
+    }
+
+    // Стили для всех чипов
+    .MuiChip-root {
+      background: #2d2d2d;
+      color: #ffffff;
+    }
+
+    // Стили для всех иконок
+    .MuiIconButton-root {
+      color: rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    // Стили для всех разделителей
+    .MuiDivider-root {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    // Стили для всех карточек
+    .MuiCard-root {
+      background: #1e1e1e;
+      color: #ffffff;
+    }
+
+    // Стили для всех форм
+    form {
+      background: #1e1e1e;
+      color: #ffffff;
+    }
+
+    // Стили для всех селектов
+    .MuiSelect-root {
+      background: #2d2d2d;
+      color: #ffffff;
+    }
+
+    // Стили для всех тултипов
+    .MuiTooltip-tooltip {
+      background: #2d2d2d;
+      color: #ffffff;
+    }
+
+    // Стили для всех диалоговых окон и форм
+    .MuiDialog-paper,
+    .MuiPaper-root,
+    .MuiCard-root,
+    form,
+    .dialog-content {
+      background: #1e1e1e !important;
+      color: #ffffff;
+
+      .MuiDialogTitle-root {
+        background: #1e1e1e;
+        color: #ffffff;
+      }
+
+      .MuiDialogContent-root {
+        background: #1e1e1e;
+        color: #ffffff;
+      }
+
+      .MuiDialogActions-root {
+        background: #1e1e1e;
+        color: #ffffff;
+      }
+    }
+
+    // Стили для всех полей ввода в формах
+    .MuiTextField-root,
+    .MuiOutlinedInput-root,
+    .MuiInput-root {
+      background: #2d2d2d !important;
+      color: #ffffff;
+
+      input, textarea {
+        color: #ffffff !important;
+      }
+
+      fieldset {
+        border-color: rgba(255, 255, 255, 0.23);
+      }
+
+      &:hover fieldset {
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      &.Mui-focused fieldset {
+        border-color: #7986cb;
+      }
+    }
+
+    // Стили для кнопок в формах
+    .MuiButton-root {
+      &.MuiButton-contained {
+        background: #3f51b5;
+        color: #ffffff;
+        
+        &:hover {
+          background: #303f9f;
+        }
+      }
+
+      &.MuiButton-text {
+        color: #7986cb;
+        
+        &:hover {
+          background: rgba(121, 134, 203, 0.1);
+        }
+      }
+    }
+
+    // Стили для заголовков и текста в формах
+    .MuiTypography-root {
+      color: #ffffff;
+
+      &.MuiTypography-subtitle1,
+      &.MuiTypography-subtitle2 {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    // Стили для селектов в формах
+    .MuiSelect-root {
+      background: #2d2d2d !important;
+      color: #ffffff !important;
+
+      .MuiSelect-icon {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    // Стили для меню селектов
+    .MuiMenu-paper {
+      background: #2d2d2d !important;
+      
+      .MuiMenuItem-root {
+        color: #ffffff;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        &.Mui-selected {
+          background: rgba(121, 134, 203, 0.2);
+        }
+      }
+    }
+
+    // Стили для загрузки файлов
+    .upload-button {
+      background: #2d2d2d;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+
+      &:hover {
+        background: #363636;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    // Переопределение стилей для диалоговых окон
+    .MuiDialog-root {
+      .MuiDialog-paper {
+        background-color: #1e1e1e !important;
+        color: #ffffff !important;
+
+        .MuiDialogTitle-root {
+          background-color: #1e1e1e !important;
+          color: #ffffff !important;
+        }
+
+        .MuiDialogContent-root {
+          background-color: #1e1e1e !important;
+          color: #ffffff !important;
+
+          .MuiTextField-root {
+            background-color: #2d2d2d !important;
+            
+            .MuiOutlinedInput-root {
+              background-color: #2d2d2d !important;
+              color: #ffffff !important;
+
+              input {
+                color: #ffffff !important;
+              }
+
+              textarea {
+                color: #ffffff !important;
+              }
+            }
+
+            .MuiInputLabel-root {
+              color: rgba(255, 255, 255, 0.7) !important;
+            }
+          }
+
+          .MuiButton-root {
+            &.MuiButton-text {
+              color: #7986cb !important;
+            }
+          }
+        }
+
+        .MuiDialogActions-root {
+          background-color: #1e1e1e !important;
+          
+          .MuiButton-root {
+            &.MuiButton-text {
+              color: #7986cb !important;
+            }
+          }
+        }
+      }
+    }
+
+    // Стили для кнопки загрузки файла
+    .upload-photo-button {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+      border: 1px dashed rgba(255, 255, 255, 0.3) !important;
+
+      &:hover {
+        background-color: #363636 !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+      }
+    }
+
+    // Стили для кнопок действий
+    .MuiDialogActions-root {
+      .MuiButton-root {
+        &.MuiButton-contained {
+          background-color: #3f51b5 !important;
+          color: #ffffff !important;
+
+          &:hover {
+            background-color: #303f9f !important;
+          }
+        }
+
+        &.MuiButton-text {
+          color: #7986cb !important;
+
+          &:hover {
+            background-color: rgba(121, 134, 203, 0.1) !important;
+          }
+        }
+      }
+    }
+
+    // Стили для модального окна деталей задач
+    .MuiDialog-root {
+      .MuiPaper-root {
+        background-color: #1e1e1e !important;
+        color: #ffffff !important;
+
+        .MuiDialogTitle-root {
+          background-color: #1e1e1e !important;
+          color: #ffffff !important;
+          padding: 16px 24px;
+        }
+
+        .MuiDialogContent-root {
+          background-color: #1e1e1e !important;
+          color: #ffffff !important;
+          padding: 20px 24px;
+
+          // Все поля ввода внутри диалога
+          .MuiTextField-root, 
+          .MuiOutlinedInput-root,
+          .MuiSelect-root {
+            background-color: #2d2d2d !important;
+
+            input, textarea {
+              color: #ffffff !important;
+            }
+
+            .MuiOutlinedInput-notchedOutline {
+              border-color: rgba(255, 255, 255, 0.23) !important;
+            }
+
+            &:hover .MuiOutlinedInput-notchedOutline {
+              border-color: rgba(255, 255, 255, 0.5) !important;
+            }
+
+            &.Mui-focused .MuiOutlinedInput-notchedOutline {
+              border-color: #7986cb !important;
+            }
+          }
+
+          // Метки полей
+          .MuiInputLabel-root {
+            color: rgba(255, 255, 255, 0.7) !important;
+          }
+
+          // Выпадающие списк��
+          .MuiSelect-select {
+            color: #ffffff !important;
+          }
+
+          // Иконка выпадающего списка
+          .MuiSelect-icon {
+            color: rgba(255, 255, 255, 0.7) !important;
+          }
+        }
+
+        .MuiDialogActions-root {
+          background-color: #1e1e1e !important;
+          padding: 16px 24px;
+
+          .MuiButton-root {
+            &.MuiButton-text {
+              color: #7986cb !important;
+            }
+
+            &.MuiButton-contained {
+              background-color: #3f51b5 !important;
+              color: #ffffff !important;
+            }
+          }
+        }
+      }
+    }
+
+    // Стили для выпадающего меню селектов
+    .MuiMenu-paper {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+
+      .MuiMenuItem-root {
+        color: #ffffff !important;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        &.Mui-selected {
+          background-color: rgba(255, 255, 255, 0.16) !important;
+        }
+      }
+    }
+
+    .auth-container {
+      .MuiPaper-root {
+        background: rgba(30, 30, 30, 0.9);
+        backdrop-filter: blur(10px);
+      }
+
+      .MuiTextField-root {
+        .MuiOutlinedInput-root {
+          background: rgba(45, 45, 45, 0.9);
+        }
+      }
+
+      .MuiButton-contained {
+        background: linear-gradient(45deg, #3f51b5 30%, #7986cb 90%);
+        
+        &:hover {
+          background: linear-gradient(45deg, #303f9f 30%, #5c6bc0 90%);
+        }
+      }
+
+      .MuiLink-root {
+        color: #7986cb;
+        
+        &:hover {
+          color: #9fa8da;
+        }
+      }
+    }
+  }
+
+  &[data-theme='light'] {
+    background: #ffffff;
+    color: rgba(0, 0, 0, 0.87);
+
+    .MuiPaper-root {
+      background: #ffffff;
+      color: rgba(0, 0, 0, 0.87);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .MuiTextField-root {
+      .MuiOutlinedInput-root {
+        background: #ffffff;
+        
+        input {
+          color: rgba(0, 0, 0, 0.87);
+        }
+
+        fieldset {
+          border-color: rgba(0, 0, 0, 0.23);
+        }
+
+        &:hover fieldset {
+          border-color: rgba(0, 0, 0, 0.87);
+        }
+      }
+
+      .MuiInputLabel-root {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .task-item {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+  }
+}
+
+.star-button {
+  &[data-theme='light'] {
+    color: #ffd700;
+  }
+
+  &[data-theme='dark'] {
+    color: #ffd700;
+  }
+} 

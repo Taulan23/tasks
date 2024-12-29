@@ -1,0 +1,146 @@
+.task-list-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .task-paper {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    
+    [data-theme='dark'] & {
+      background: rgba(30, 30, 30, 0.9) !important;
+    }
+
+    .task-input {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+
+      .MuiTextField-root {
+        .MuiOutlinedInput-root {
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.8);
+          
+          [data-theme='dark'] & {
+            background: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+
+      button {
+        min-width: 120px;
+        background: linear-gradient(45deg, #3f51b5 30%, #7986cb 90%);
+        
+        &:hover {
+          background: linear-gradient(45deg, #303f9f 30%, #5c6bc0 90%);
+        }
+      }
+    }
+
+    .task-item {
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: all 0.2s;
+
+      [data-theme='dark'] & {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      &.completed {
+        opacity: 0.7;
+        .MuiListItemText-primary {
+          text-decoration: line-through;
+        }
+      }
+
+      &:hover {
+        transform: translateX(4px);
+        background: rgba(255, 255, 255, 0.9);
+        
+        [data-theme='dark'] & {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      .task-details {
+        display: flex;
+        gap: 8px;
+        margin-top: 4px;
+
+        .category-chip {
+          &.personal { background-color: rgba(227, 242, 253, 0.9); }
+          &.work { background-color: rgba(232, 245, 233, 0.9); }
+          &.shopping { background-color: rgba(255, 243, 224, 0.9); }
+          &.health { background-color: rgba(252, 228, 236, 0.9); }
+          &.other { background-color: rgba(243, 229, 245, 0.9); }
+
+          [data-theme='dark'] & {
+            &.personal { background-color: rgba(25, 118, 210, 0.4); }
+            &.work { background-color: rgba(56, 142, 60, 0.4); }
+            &.shopping { background-color: rgba(245, 124, 0, 0.4); }
+            &.health { background-color: rgba(233, 30, 99, 0.4); }
+            &.other { background-color: rgba(156, 39, 176, 0.4); }
+          }
+        }
+
+        .due-date-chip {
+          background-color: rgba(0, 0, 0, 0.08);
+          
+          [data-theme='dark'] & {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      .task-actions {
+        display: flex;
+        gap: 4px;
+
+        .MuiIconButton-root {
+          color: inherit;
+          opacity: 0.7;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        .star-button {
+          &.MuiIconButton-colorWarning {
+            color: #ffd700 !important;
+          }
+
+          &.MuiIconButton-colorDefault {
+            [data-theme='light'] & {
+              color: rgba(0, 0, 0, 0.3) !important;
+            }
+
+            [data-theme='dark'] & {
+              color: rgba(255, 255, 255, 0.5) !important;
+            }
+          }
+
+          &:hover {
+            .MuiSvgIcon-root {
+              transform: scale(1.1);
+              
+              [data-theme='light'] & {
+                color: #ffd700;
+              }
+
+              [data-theme='dark'] & {
+                color: #ffd700;
+              }
+            }
+          }
+
+          .MuiSvgIcon-root {
+            transition: all 0.2s ease;
+          }
+        }
+      }
+    }
+  }
+} 

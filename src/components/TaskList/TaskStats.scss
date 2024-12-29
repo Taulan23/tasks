@@ -1,0 +1,106 @@
+.stats-container {
+  margin-bottom: 32px;
+
+  .stats-grid {
+    margin-bottom: 24px;
+
+    .stat-card {
+      height: 100%;
+      
+      .MuiCardContent-root {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .icon {
+        font-size: 48px;
+        opacity: 0.8;
+      }
+
+      .stat-info {
+        flex-grow: 1;
+        text-align: right;
+
+        .MuiTypography-h4 {
+          font-weight: 600;
+          margin-bottom: 4px;
+        }
+
+        .MuiTypography-subtitle2 {
+          opacity: 0.7;
+        }
+      }
+
+      &.total {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      &.completed {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        color: white;
+      }
+
+      &.active {
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        color: white;
+      }
+
+      &.starred {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        color: white;
+      }
+    }
+  }
+
+  .category-stats {
+    padding: 24px;
+
+    .category-icon {
+      vertical-align: bottom;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+
+    .category-item {
+      margin-bottom: 16px;
+
+      .category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+
+        .category-chip {
+          background: rgba(0, 0, 0, 0.08);
+        }
+      }
+
+      .MuiLinearProgress-root {
+        height: 8px;
+        border-radius: 4px;
+
+        &.progress-personal {
+          .MuiLinearProgress-bar { background-color: #667eea; }
+        }
+
+        &.progress-work {
+          .MuiLinearProgress-bar { background-color: #43e97b; }
+        }
+
+        &.progress-shopping {
+          .MuiLinearProgress-bar { background-color: #f6d365; }
+        }
+
+        &.progress-health {
+          .MuiLinearProgress-bar { background-color: #fa709a; }
+        }
+
+        &.progress-other {
+          .MuiLinearProgress-bar { background-color: #764ba2; }
+        }
+      }
+    }
+  }
+} 
